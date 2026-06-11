@@ -13,13 +13,12 @@
     --shadow-hover:0 8px 30px rgba(108,92,231,.18);
   }
   body{font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-  .page{display:none;animation:fadeIn .4s ease}
-  .page.active{display:block}
+  .page{visibility:hidden;position:absolute;top:0;left:0;width:100%;opacity:0;pointer-events:none;animation:none}
+  .page.active{visibility:visible;position:relative;opacity:1;pointer-events:auto;animation:fadeIn .4s ease}
   @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* HERO */
-  #page-hero{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:2rem;background:linear-gradient(145deg,#F8F7FF 0%,#EDE9FF 50%,#E8F8F5 100%)}
-  #page-hero.active{display:flex}
+  #page-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;background:linear-gradient(145deg,#F8F7FF 0%,#EDE9FF 50%,#E8F8F5 100%)}
   .hero-badge{background:rgba(108,92,231,.1);color:#6C5CE7;font-size:12px;font-weight:600;letter-spacing:1.5px;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem}
   .hero-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;text-align:center;line-height:1.2;margin-bottom:1rem;background:linear-gradient(135deg,#4834D4,#6C5CE7,#8E44AD);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .hero-sub{font-size:1.1rem;color:var(--muted);text-align:center;max-width:580px;line-height:1.8;margin-bottom:2.5rem}
@@ -59,8 +58,7 @@
   .btn-next.enabled:hover{background:#4834D4;transform:translateX(2px)}
 
   /* ANALYZING */
-  #page-analyzing{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;background:var(--bg)}
-  #page-analyzing.active{display:flex}
+  #page-analyzing{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg)}
   .ai-ring{width:100px;height:100px;margin:0 auto 2rem;position:relative}
   .ai-ring svg{animation:rotate 2s linear infinite}
   @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
